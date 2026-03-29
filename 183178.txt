@@ -1,1 +1,80 @@
-Monika Nechkoska
+1. Почеток и поставување на проектот
+
+Прво направив папка за вежбата и го иницијализирав Git репозиториумот. Го поврзав со мојот GitHub профил користејќи Personal Access Token за автентикација.
+
+Команди:
+mkdir SI_2026_Lab1_183178
+cd SI_2026_Lab1_183178
+git init
+git remote add origin https://github.com/MonikaNechkoska/SI_2026_Lab1_183178.git
+echo Monika Nechkoska 183178 > README.md
+git add README.md
+git commit -m "Initial commit"
+git push -u origin master
+
+
+2. Додавање на почетниот код и прва функција
+
+Го додадов почетниот Java фајл и направив посебна гранка за пребарување на книги. Откако ја средив функцијата, ја споив со главната гранка.
+
+Команди:
+git add SI2026Lab1Main.java
+git commit -m "Add starter code"
+git checkout -b feature-search-books
+# (тука го изменав кодот во Notepad за searchBooks)
+git add SI2026Lab1Main.java
+git commit -m "Implement book search by title"
+git checkout master
+git merge feature-search-books
+git push origin master
+
+3. Паралелна работа на повеќе гранки
+
+Направив две нови гранки: една за позајмување книги (feature-borrow-book) и една за извештаи по жанр (feature-genre-report). На гранката за жанрови го додадов потребниот метод и направив push.
+
+Команди:
+git branch feature-borrow-book
+git branch feature-genre-report
+git checkout feature-genre-report
+# (имплементиран метод printBooksByGenre)
+git add SI2026Lab1Main.java
+git commit -m "Implement genre report"
+git push origin feature-genre-report
+
+4. Предизвикување и решавање на конфликт (Чекори 17-22)
+
+Намерно направив измени на иста линија во master и во feature-borrow-book за да предизвикам конфликт
+
+Команди:
+git checkout master
+# Сменета порака во Notepad во "Book checked out."
+git commit -m "Update borrow message on master"
+
+git checkout feature-borrow-book
+# Сменета истата порака во Notepad во "Implement borrow message"
+git commit -m "Implement borrow message"
+
+git merge master
+ТУКА СЕ ПОЈАВИ КОНФЛИКТОТ: CONFLICT (content): Merge conflict in SI2026Lab1Main.java
+
+Решавање на конфликтот: Го отворив фајлот во Notepad, ги избришав ознаките <<<<<<<, ======= и >>>>>>> и ја оставив финалната порака.
+
+git add SI2026Lab1Main.java
+git commit -m "Resolve merge conflict"
+git status
+# Излез: nothing to commit, working tree clean
+
+5. Финални спојувања и стратегии (Чекори 23-24) 
+
+Сега кога сè е чисто, ги спојувам гранките во master.
+	1. Спојување на feature-genre-report: Ова спојување беше recursive (ort) бидејќи настана конфликт со промените во master кој мораше рачно да се реши со комбинирање на кодот од двете гранки.
+	2. Спојување на feature-borrow-book: Ова беше fast-forward бидејќи претходно веќе ги решивме конфликтите на самата гранка.
+	
+6. Креирање на Pull Requests (Чекори 19-20) Пред финалното спојување, ги подготвив и ги испратив гранките на GitHub за да креирам Pull Requests (feature-borrow-book и feature-genre-report).
+7. Генерирање на логови и завршување на Дел 1 (Чекори 26-27) За крај, го генерирав графичкиот приказ на сите гранки и нивната историја во посебен фајл logs.txt и ги испратив сите финални промени на GitHub.
+
+Команди: 
+git log --oneline --graph --all > logs.txt
+git add logs.txt 183178.txt
+git commit -m "Final commit: Documentation and logs added"
+git push origin master
