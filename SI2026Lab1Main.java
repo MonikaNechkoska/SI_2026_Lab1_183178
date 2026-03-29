@@ -128,5 +128,12 @@ public class SI2026Lab1Main {
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
 
         System.out.println("Library initialized.");
+
+String searchTitle = "Clean Code";
+        if (library.searchBookByTitle(searchTitle)) {
+            System.out.println("Book '" + searchTitle + "' is found in the library.");
+        } else {
+            System.out.println("Book '" + searchTitle + "' is not found.");
+        }
     }
 }
