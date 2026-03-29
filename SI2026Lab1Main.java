@@ -51,8 +51,14 @@ class Library {
         books.add(book);
     }
 
+  
     // TODO: Implement in branch feature-search-books
     public boolean searchBookByTitle(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -86,6 +92,8 @@ class Library {
         }
         System.out.println("Book not found.");
     }
+
+
 
     // TODO: Implement in branch feature-genre-report
     public void printBooksByGenre(String genre) {
