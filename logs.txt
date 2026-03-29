@@ -1,0 +1,26 @@
+*   6a3996a Final merge: Combined genre report and borrow book features
+|\  
+| * d69e271 Implement genre report
+| | *   55e31fd Resolve merge conflict
+| | |\  
+| |_|/  
+|/| |   
+* | | aa849c5 Update borrow message on master
+| | * b28af4c Implement borrow message
+| | * 4701605 Change for PR
+| |/  
+|/|   
+* |   33774cf Version with resolved conflict
+|\ \  
+| * | 568fd3a Update message on master
+| * | 640f6cc Implement borrow book
+| * | 06887b7 Update borrow message on master
+| |/  
+* | 3f6d0ba Save local changes before switching
+* | 8cf6617 Implement borrow book
+* | 25dcc5d Implement borrow book
+|/  
+* 6beb0ac Add test calls in main
+* 811e22e Implement book search by title
+* 2c99cdc Add starter code
+* 4aec09b Initial commit
