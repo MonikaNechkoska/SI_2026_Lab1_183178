@@ -52,7 +52,7 @@ class Library {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (!book.isBorrowed()) {
                     book.setBorrowed(true);
-                    System.out.println("Borrowed successfully!");
+                    System.out.println("Book checked out");
                 } else {
                     System.out.println("Book is already borrowed.");
                 }
@@ -78,7 +78,7 @@ class Library {
     }
 
     public void printBooksByGenre(String genre) {
-        System.out.println("--- Genre Report: " + genre + " ---");
+        System.out.println("---  Genre Report: " + genre +  " ---");
         for (Book book : books) {
             if (book.getGenre().equalsIgnoreCase(genre)) {
                 System.out.println(book);
